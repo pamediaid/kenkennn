@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Valentine's Day</title>
-    <link rel="stylesheet" href="public/style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Be My Valentine</title>
+    <link rel="stylesheet" href="css/valentine.css" />
   </head>
   <body>
-    <canvas id="starfield"></canvas>
-    <button id="valentinesButton"><a href="doyouloveme.html">Click Me! ❤</a></button>
-    <script src="/script.js"></script>
+    <div id="valentineQuestion"><b>Do You Love Me Ken??</b></div>
+    <button class="answerButton" onclick="location.href='thankyou.html'">
+      I Love Youuuu Soww Muchh
+    </button>
+    <button class="answerButton" id="noButton">g (gbisa di pencet jir)</button>
+    <br />
+    <img src="/public/images/cat.gif" alt="cat asking question" class="responsive" />
+
+    <script>
+      document
+        .getElementById("noButton")
+        .addEventListener("click", function () {
+          var yesButton = document.querySelector(
+            'button[onclick*="thankyou.html"]'
+          );
+          var currentFontSize = parseInt(
+            window.getComputedStyle(yesButton).fontSize
+          );
+          yesButton.style.fontSize = currentFontSize + 10 + "px"; // Increase font size by 5px
+        });
+    </script>
   </body>
 </html>
